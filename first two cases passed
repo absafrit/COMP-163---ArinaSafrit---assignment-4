@@ -14,7 +14,7 @@ student = {
 }
 
 Current_course_list = ["COMP 163", "MATH 131", "COMP 390", "BIOL 100"]
-Completed_course_list = ["English", "Chemistry", "Statistics", "Physical Education", "World History"]
+Completed_course_list = ["ENG 100", "GEEN 111", "ENG 101", "SPCH 250", "SOCL 100"]
 Credit_hours_list = [3, 3, 3, 4]
 GPA_hisotry_list = [3.2, 3.5, 3.4, 3.1]
 
@@ -24,7 +24,7 @@ Instagram_info = ("Instagram", "@arinaab", 165)
 Twitter_info = ("Twitter", "@dogmom389", 135)
 Birthday_info = ("Birthday", 2, 7, 1990)
 
-current_skills_set = {"Python basics","", "Medical coding", "Problem solving", "Time management", "Crocheting"}
+current_skills_set = {"Python", "Medical coding", "Problem solving", "Time management", "Crocheting", "GitHub"}
 skills_to_learn_set = {"JavaScript", "Data structures", "Git", "Web design", "Using AI"}
 career_interests_set = {"Software development", "Web development", "Data science", "AI development"}
 Hobbies_set = {"Gaming", "Crocheting", "Reading", "Baking", "Traveling"}
@@ -136,6 +136,9 @@ print("A) light (12 credits)")
 print("B) moderate (15 credits)")
 print("C) heavy (18 credits)")
 
+high_gpa = 3.8
+low_gpa = 2.0
+
 Choice = input("Your Choice (A, B, C):")
 
 if Choice == "A":
@@ -148,4 +151,46 @@ elif Choice == "C":
     print(f"Future GPA will be lower than {current_gpa}")
     print(f"Study Hours are likely to be more than {study_hours}")
 else:
-    print("No longer enrolled")
+    print(f"Student no longer enrolled")
+
+
+print("=== Courses Required for Success ===")
+
+needed_course = ["COMP 121", "COMP 180", "COMP 167", "MATH 132", "PHYS 241"]
+credit_hours_needed = {
+    "COMP 121": 1,
+    "COMP 180": 3,
+    "COMP 167": 3,
+    "MATH 132": 3,
+    "PHYS 241": 4
+}
+
+if needed_course[0] not in Current_course_list or needed_course[0] not in Completed_course_list:
+    print(f"You should consider taking {needed_course[0]}")
+if needed_course[1] not in Current_course_list and needed_course[1] not in Completed_course_list:
+    print(f"You should consider taking {needed_course[1]}")
+
+if current_gpa >= high_gpa:
+    if needed_course[2] not in Current_course_list and needed_course[2] not in Completed_course_list:
+        print(f"You should consider taking {needed_course[2]}")
+elif current_gpa <= low_gpa:
+        print(f"Consider taking another needed course.")
+
+print(f"Spring Schedul: {needed_course[0]}, {needed_course[1]}, {needed_course[2]}, {needed_course[3]}, {needed_course[4]}")
+spring_credit_hours = sum(credit_hours_needed.values())
+
+print(f"Total credit hours for Spring: {spring_credit_hours}")
+
+if spring_credit_hours < 15:
+    print("Need to add another course for option B")
+elif spring_credit_hours >= 15 and spring_credit_hours < 18:
+    print("Correct course load for option B")
+elif spring_credit_hours >=15:
+    print("Course load exceeds credit limit for option monthly_budget")
+
+spring_monthly_budget = 800
+
+if spring_monthly_budget is not monthly_budget:
+    print("Create new budget")
+else:
+    print("Keep current budget")
