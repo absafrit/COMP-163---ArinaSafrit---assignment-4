@@ -1,31 +1,250 @@
-student_name = input("Your name:")
-current_gpa = float(input("Current GPA:"))
-study_hours = int(input("Study Hours:"))
-social_points = int(input("Social points:"))
-stress_level = int(input("Stress Level 0-100:"))
+student_name = "Arina Safrit"
+current_gpa = 3.4
+study_hours = 24
+social_points = 12
+stress_level = 88
 
-if 1.0 <= current_gpa <= 4.0:
-    print("Valid GPA")
-else:
-    print("Invalid GPA")
 
+student = {
+    "Full name": student_name,
+    "Student email": "asafrit@ncat.edu",
+    "Hometown": "Raleigh, NC",
+    "Graduation semester": "Spring 2029",
+    "Major": "Computer Science"
+}
+
+Current_course_list = ["COMP 163", "MATH 131", "COMP 390", "BIOL 100"]
+Completed_course_list = ["ENG 100", "GEEN 111", "ENG 101", "SPCH 250", "SOCL 100"]
+Credit_hours_list = [3, 3, 3, 4]
+GPA_hisotry_list = [3.2, 3.5, 3.4, 3.1]
+
+Emergency_contact = ("Husband", "Adam Safrit", "919-799-2948")
+Home_address = ("389 Timber Street", "Raleigh", "NC", "27615")
+Instagram_info = ("Instagram", "@arinaab", 165)
+Twitter_info = ("Twitter", "@dogmom389", 135)
+Birthday_info = ("Birthday", 2, 7, 1990)
+
+current_skills_set = {"Python", "Medical coding", "Problem solving", "Time management", "Crocheting", "GitHub"}
+skills_to_learn_set = {"JavaScript", "Data structures", "Git", "Web design", "Using AI"}
+career_interests_set = {"Software development", "Web development", "Data science", "AI development"}
+Hobbies_set = {"Gaming", "Crocheting", "Reading", "Baking", "Traveling"}
+Entertainment_backlog = {"The Sandman", "Bleach 1000 year war", "Virgin River", "Blacklist", "Doctor Who"}
+
+course_credits_dic = {
+    "COMP 163":Credit_hours_list[0], 
+    "MATH 131":Credit_hours_list[1],
+    "COMP 390":Credit_hours_list[2],
+    "BIOL 100":Credit_hours_list[3]
+    }
+course_professors_dic = {
+    "COMP 163":"Prof. Rhodes",
+    "MATH 131":"Dr. Edoh", 
+    "COMP 390":"Prof. Pioro",
+    "BIOL 100":"Prof. Dickerson"
+    }
+course_rooms_dic = {
+    "COMP 163":"Gibbs 327",
+    "MATH 131":"Marteena 120",
+    "COMP 390":"Online",
+    "BIOL 100": "McNair 100"
+    }
+monthly_budget_dic = {
+    "Food":400,
+    "Entertainment":150,
+    "Books":50,
+    "Transportation":300}
+study_hours_dic = {
+    "Programming":10,
+    "Math":6,
+    "Technology ethics":4,
+    "Biology":3}
+Contact_directory_dic = {
+    "{Emergency_contact[0]}":"{Emergency_contact[3]}",
+    "Mom":"919-546-8924",
+    "Academic Advisor":"336-334-5000"}
+
+total_credit_hours = sum(Credit_hours_list)
+cumulutive_gpa = (sum(GPA_hisotry_list)/4)
+num_completed_courses = len(Completed_course_list)
+total_weekly_study_hrs = sum(study_hours_dic.values())
+academic_load = total_credit_hours+total_weekly_study_hrs
+monthly_budget = sum(monthly_budget_dic.values())
+daily_food_budget = (monthly_budget_dic["Food"]/30)
+annual_budge = monthly_budget*12
+study_cost_per_hr = monthly_budget_dic["Books"]/total_weekly_study_hrs
+
+total_social_media_followers = Instagram_info[2]+Twitter_info[2]
+skills_count_comparison = len(current_skills_set)/len(skills_to_learn_set)
+contact_list_size = len(Contact_directory_dic)
+entertain_backlog_siz = len(Entertainment_backlog)
+
+print("================================================================")
+print("              PERSONAL ACADEMIC & LIFE PORTFOLIO")
+print("================================================================")
+print(f"Student: {student_name} | Email: [Student email]")
+print(f"From: [Hometown] | Graduating: [Graduation semester]")
+print(f"Major: [Major1]")
+print()
+print("=== ACADEMIC PROFILE ===")
+print(f"Current Semester: {total_credit_hours} credits across {len(Current_course_list)} courses")
+print(f"Cumulative GPA: {cumulutive_gpa:.2f}")
+print(f"Weekly Study Time: {total_weekly_study_hrs} hours")
+print(f"Academic Investment: ${study_cost_per_hr:.1f} per study hour")
+print()
+print(f"Current Courses:")
+print(f"{Current_course_list[0]} - {course_credits_dic["COMP 163"]} credits - {course_professors_dic["COMP 163"]} - {course_rooms_dic["COMP 163"]}")
+print(f"{Current_course_list[1]} - {course_credits_dic["MATH 131"]} credits - {course_professors_dic["MATH 131"]} - {course_rooms_dic["MATH 131"]}")
+print(f"{Current_course_list[2]} - {course_credits_dic["COMP 390"]} credits - {course_professors_dic["COMP 390"]} - {course_rooms_dic["COMP 390"]}")
+print(f"{Current_course_list[3]} - {course_credits_dic["BIOL 100"]} credits - {course_professors_dic["BIOL 100"]} - {course_rooms_dic["BIOL 100"]}")
+print()
+print("=== PERSONAL DEVELOPMENT ===")
+print(f"Current Skills: {current_skills_set}")
+print(f"Learning Goals: {skills_to_learn_set}")
+print(f"Career Interests: {career_interests_set}")
+print(f"Skills Currently Have: {len(current_skills_set)}")
+print(f"Skills Want to Learn: {len(skills_to_learn_set)}")
+print()
+print("=== FINANCIAL OVERVIEW ===")
+print(f"Monthly Budget: ${monthly_budget}")
+print(f"Food: ${monthly_budget_dic["Food"]} (${daily_food_budget:.1f}/day)")
+print(f"Entertainment: ${monthly_budget_dic["Entertainment"]}")
+print(f"Books: ${monthly_budget_dic["Books"]}")
+print(f"Transportation: ${monthly_budget_dic["Transportation"]}")
+print(f"Annual Projection: ${annual_budge}")
+print()
+print("=== CONNECTIONS & CONTACTS ===")
+print(f"Emergency Contact: {Emergency_contact[1]} ({Emergency_contact[0]}) - {Emergency_contact[2]})")
+print(f"Home Address: {Home_address[0]}, {Home_address[1]}, {Home_address[2]} {Home_address[3]}")
+print(f"Social Media Presence: {total_social_media_followers} followers across 2 platforms")
+print(f"Key Contacts: {len(Contact_directory_dic)} people in directory")
+print()
+print("=== LIFE STATISTICS ===")
+print(f"Total Courses Completed: {len(Completed_course_list)}")
+print(f"Current Academic Load: {academic_load} weekly commitments")
+print(f"Entertainment Backlog: {entertain_backlog_siz} items")
+print(f"Current Hobbies: {len(Hobbies_set)} activities")
+print("================================================================")
 
 print(F"Welcome {student_name}, Current GPA: {current_gpa}, Study Hours: {study_hours}, Social Points: {social_points}, Stress Level: {stress_level}")
+
+A = 12
+B = 15
+C = 18
 
 print("Choose your course load:")
 print("A) light (12 credits)")
 print("B) moderate (15 credits)")
 print("C) heavy (18 credits)")
 
-Choice = input("Your Choice (A,B,C):")
+high_gpa = 3.8
+low_gpa = 2.0
+max_stress = 85
+min_stress = 10
+min_study = 10
+max_study = 30
 
-if Choice in [A,B,C]:
-    if Choice == A:
-        print(f"Future GPA will be greater than {1.0 <= current_gpa <= 4.0}")
-        print(f"Study Hours will be less than {study_hours}")
-    elif Choice == B:
-        print(f"Future GPA will be equal to {1.0 <= current_gpa <= 4.0}")
-    elif Choice == C:
-        print(f"Future GPA will be lower than {1.0 <= current_gpa <= 4.0}")
+Choice = input("Your Choice (A, B, C):")
+
+if Choice == "A":
+    print(f"Future GPA will likely be greater than {current_gpa}")
+    print(f"Study Hours is likely to be less than {study_hours}")
+elif Choice == "B":
+    print(f"Future GPA will be equal to {current_gpa}")
+    print(f"Study Hours are likely to be the same as {study_hours}")
+elif Choice == "C":
+    print(f"Future GPA will be lower than {current_gpa}")
+    print(f"Study Hours are likely to be more than {study_hours}")
 else:
-    print("No longer enrolled")
+    print(f"Student no longer enrolled")
+
+
+print("=== Courses Required for Success ===")
+
+needed_course = ["Programming", "Math", "History", "English"]
+credit_hours_needed = {
+    "Programming": 3,
+    "Math": 3,
+    "History": 3,
+    "English": 3
+}
+
+if needed_course[0] not in Current_course_list or needed_course[0] not in Completed_course_list:
+    print(f"You should consider taking {needed_course[0]}")
+if needed_course[1] not in Current_course_list and needed_course[1] not in Completed_course_list:
+    print(f"You should consider taking {needed_course[1]}")
+
+if current_gpa >= high_gpa:
+    if needed_course[2] not in Current_course_list and needed_course[2] not in Completed_course_list:
+        print(f"You should consider taking {needed_course[2]}")
+elif current_gpa <= low_gpa:
+        print(f"Consider taking another needed course.")
+
+print(f"Spring Schedul: {needed_course[0]}, {needed_course[1]}, {needed_course[2]}, {needed_course[3]}")
+spring_credit_hours = sum(credit_hours_needed.values())
+
+print(f"Total credit hours for Spring: {spring_credit_hours}")
+
+if Choice == "A":
+    if spring_credit_hours < 12:
+        print("Need to add another course for Option A")
+    elif spring_credit_hours >= 12 and spring_credit_hours < 15:
+        print("Correct course load for Option A")
+    elif spring_credit_hours >= 15:
+        print("Course load to high for Option A") 
+if Choice == "B":
+    if spring_credit_hours < 15:
+        print("Need to add another course for option B")
+    elif spring_credit_hours >= 15 and spring_credit_hours < 18:
+        print("Correct course load for option B")
+    elif spring_credit_hours >=15:
+        print("Course load exceeds credit limit for option B")
+if Choice == "C":
+    if spring_credit_hours < 18:
+        print("Need to add another course for option C")
+    if spring_credit_hours >= 18 and spring_credit_hours < 21:
+        print("Correct course load for option C")
+
+print("=== Study choice including stressor factors ===")
+
+if Choice == "A":
+    if current_gpa < high_gpa and stress_level > max_stress:
+        print("Light course load may reduce stress and improve GPA.")
+    elif current_gpa >= high_gpa and study_hours >= min_study:
+        print("Light load may slow your academic momentum.")
+    else:
+        print("A safe and manageable option.")
+
+    if "Programming" not in Current_course_list and "Programming" not in Completed_course_list:
+        print("Consider adding 'Programming' to strengthen your skills.")
+
+elif Choice == "B":
+    if current_gpa >= 3.0 and stress_level <= max_stress:
+        print("Moderate load is well balanced for your academic profile.")
+    elif current_gpa < 3.0 or study_hours < min_study:
+        print("You may need extra support to handle this load.")
+    
+    if "Data structures" in skills_to_learn_set and "Data structures" not in current_skills_set:
+        print("Learn 'Data structures' to boost your CS foundation.")
+
+elif Choice == "C":
+    if current_gpa >= high_gpa and stress_level < 75 and study_hours >= 25:
+        print("You are well-prepared for a heavy course load.")
+    elif current_gpa < 3.0 or stress_level > max_stress:
+        print("Heavy load may lead to burnout or lower GPA.")
+    else:
+        print("Proceed with caution — evaluate your commitments.")
+
+    if "AI development" in skills_to_learn_set:
+        print("Consider taking an AI or ML elective to match your interests.")
+
+else:
+    print("Invalid choice. Please enter A, B, or C.")
+
+print("=== Quick Budget Assessment ===")
+
+spring_monthly_budget = 800
+
+if spring_monthly_budget is not monthly_budget:
+    print("Create new budget")
+else:
+    print("Keep current budget")
